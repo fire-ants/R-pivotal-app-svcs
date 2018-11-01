@@ -1,0 +1,10 @@
+---
+packages:
+  - cran_mirror: https://cran.r-project.org
+    packages:
+    - name: ggplot2
+    - name: dplyr
+    - name: dbplyr
+    - name: stringr
+  - packages:
+      - name: pitchRx
