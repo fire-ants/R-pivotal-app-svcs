@@ -31,4 +31,4 @@ The status of the task depends on the execution return value of the process.
 We can see that the R process ran by looking at the logs.
 
 #cf logs --recent WillsRExample
-cf logs --recent HelloWorld
+cf logs --recent HelloWorldExample
