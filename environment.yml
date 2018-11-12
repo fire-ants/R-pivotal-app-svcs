@@ -1,0 +1,5 @@
+name: python
+dependencies:
+- python=3.6.6
+- pip
+- fortran-magic

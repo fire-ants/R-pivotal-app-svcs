@@ -2,4 +2,11 @@
 packages:
   - cran_mirror: https://cran.r-project.org
     packages:
-    - name: stringr
+    - name: hexbin
+    - name: XML2R
+    - name: plyr
+    - name: MASS
+    - name: mgcv
+  - packages:
+    - name: pitchRx
+num_threads: 4
