@@ -1,1 +1,1 @@
-web: R -f HelloWorld.R
+web: pwd
