@@ -2,12 +2,10 @@
 packages:
   - cran_mirror: https://cran.r-project.org
     packages:
-    - name: DBI
-    - name: RMySQL
     - name: hexbin
-    - name: dplyr
     - name: XML2R
-    - name: plyr
+    - name: dplyr
+    - name: dbplyr
     - name: MASS
     - name: mgcv
   - packages:

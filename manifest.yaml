@@ -1,6 +1,6 @@
 ---
 applications:
-- name: HelloWorldExample
+- name: MLB-DatafreshAnt
   instances: 1
   buildpacks:
   - https://github.com/cloudfoundry/r-buildpack.git

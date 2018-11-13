@@ -1,22 +1,63 @@
-install.packages("pitchRx")
+################################
+#install.packages("git2r")
+################################
 
 
-library("pitchRx")
-dat160501 <- scrape(start = "2016-05-01", end = "2016-05-01", suffix = "inning/inning_all.xml")
-
-
-
-install.packages("devtools")
-library("devtools")
+library(devtools)
 install_github("cpsievert/pitchRx")
 
 library("pitchRx")
-dat170701 <- scrape(start = "2017-07-01", end = "2017-07-01", suffix = "inning/inning_all.xml")
-
-dat180402 <- scrape(start = "2018-04-02", end = "2018-04-02", suffix = "inning/inning_all.xml")
+dat180402 <- scrape(start = "2018-04-02", end = "2018-04-04", suffix = "inning/inning_all.xml")
 
 
-ip <- as.data.frame(installed.packages()[,c(1,3:4)])
-rownames(ip) <- NULL
-ip <- ip[is.na(ip$Priority),1:2,drop=FALSE]
-print(ip, row.names=FALSE)
+
+list <- list(dat180402$atbat$date)
+
+
+maxdate <- dat180402$atbat$date[which.max(dat180402$atbat$date)]
+
+
+Today <- Sys.Date()
+
+sql_command <- paste("UPDATE pg_settings SET setting =", Sys.Date(), "WHERE name = 'latest_date'")
+
+ WHERE name = 'latest_date'"
+dbGetQuery(con, sql_command)
+
+
+
+UPDATE pg_settings SET setting = reset_val WHERE name = 'latest_date';
+
+
+
+
+http://www.postgresqltutorial.com/postgresql-update/
+
+
+
+# specifies the details of the table
+sql_command <- "CREATE TABLE cartable
+(
+  carname character varying NOT NULL,
+  mpg numeric(3,1),
+  cyl numeric(1,0),
+  disp numeric(4,1),  
+  hp numeric(3,0),
+  drat numeric(3,2),
+  wt numeric(4,3),
+  qsec numeric(4,2),
+  vs numeric(1,0),
+  am numeric(1,0),
+  gear numeric(1,0),
+  carb numeric(1,0),
+  CONSTRAINT cartable_pkey PRIMARY KEY (carname)
+)
+WITH (
+OIDS=FALSE
+);
+ALTER TABLE cartable
+OWNER TO openpg;
+COMMENT ON COLUMN cartable.disp IS '
+';"
+# sends the command and creates the table
+dbGetQuery(con, sql_command)
